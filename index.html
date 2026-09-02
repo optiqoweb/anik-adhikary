@@ -279,7 +279,7 @@
   .card:nth-child(3n) h3::after{ background:var(--gold); }
   .card:hover h3::after{ width:100%; }
   .card .yr{
-    font-size:0.82rem; color:rgba(20,33,31,0.55); margin-bottom:10px;
+    font-size:0.82rem; color:var(--ink); margin-bottom:10px;
     transition:transform .3s ease .02s;
   }
   .card:hover .yr{ transform:translateX(3px); }
@@ -289,17 +289,17 @@
   }
   .card:hover p{ transform:translateX(3px); }
   .card .materials{
-    font-size:0.76rem; color:rgba(20,33,31,0.55); border-top:1px dashed rgba(20,33,31,0.2); padding-top:10px;
-    transition:color .3s ease, padding-left .3s cubic-bezier(.2,.7,.2,1), border-color .3s ease;
+    font-size:0.76rem; color:var(--ink); border-top:1px dashed rgba(20,33,31,0.2); padding-top:10px;
+    transition:padding-left .3s cubic-bezier(.2,.7,.2,1), border-color .3s ease;
   }
-  .card:hover .materials{ color:var(--ink); padding-left:6px; border-color:rgba(20,33,31,0.4); }
+  .card:hover .materials{ padding-left:6px; border-color:rgba(20,33,31,0.4); }
 
   /* ---- about ---- */
   .about{ padding:20px 0 100px; }
   .about-grid{
     display:grid; grid-template-columns:1.1fr 0.9fr; gap:64px;
   }
-  .about-grid p{ font-size:1.05rem; color:color-mix(in srgb, var(--fg) 82%, transparent); margin-bottom:18px; max-width:52ch; }
+  .about-grid p{ font-size:1.05rem; color:var(--ink); margin-bottom:18px; max-width:52ch; }
   .materials-list{
     position:relative; overflow:hidden;
     border:1px solid var(--line); border-radius:6px; padding:28px;
