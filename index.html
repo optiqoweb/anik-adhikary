@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Anik Adhikary — Graphic Designer &amp; Virtual Artist</title>
+<meta name="description" content="Anik Adhikary is a graphic designer and virtual artist based in Dhaka, Bangladesh. Founder of Graphic Design Ocean, working across branding, editorial design, AI-assisted art, and public speaking.">
+<meta name="keywords" content="Anik Adhikary, graphic designer Dhaka, Graphic Design Ocean, Bangladeshi graphic designer, brand identity design, editorial illustration, AI art, virtual artist">
+<meta name="author" content="Anik Adhikary">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://example.com/">
+
+<!-- Open Graph / Facebook, LinkedIn, WhatsApp -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/">
+<meta property="og:title" content="Anik Adhikary — Graphic Designer & Virtual Artist">
+<meta property="og:description" content="Graphic designer and virtual artist based in Dhaka. Founder of Graphic Design Ocean — branding, editorial design, AI-assisted art, and speaking.">
+<meta property="og:image" content="logo.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Anik Adhikary">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://example.com/">
+<meta name="twitter:title" content="Anik Adhikary — Graphic Designer & Virtual Artist">
+<meta name="twitter:description" content="Graphic designer and virtual artist based in Dhaka. Founder of Graphic Design Ocean — branding, editorial design, AI-assisted art, and speaking.">
+<meta name="twitter:image" content="logo.png">
+
+<meta name="theme-color" content="#241B3D">
+<link rel="icon" type="image/png" href="favicon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Anik Adhikary",
+  "jobTitle": "Graphic Designer",
+  "url": "https://example.com/",
+  "image": "logo.png",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Graphic Design Ocean"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dhaka",
+    "addressCountry": "BD"
+  },
+  "sameAs": [
+    "https://instagram.com/anik_adhikary_joy",
+    "https://linkedin.com/in/anik-adhikary-572779408"
+  ]
+}
+</script>
+<script>
+  (function(){
+    try{
+      var t = localStorage.getItem('theme');
+      if(!t){ t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'; }
+      document.documentElement.setAttribute('data-theme', t);
+    }catch(e){ document.documentElement.setAttribute('data-theme','dark'); }
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #241B3D;
+    --bg-deep: #180F2E;
+    --fg: #F5F0FF;
+    --paper: #FFF7E8;
+    --ink: #1D1332;
+    --gold: #FFC53D;
+    --coral: #FF4D7D;
+    --teal: #2BDCC9;
+    --line: color-mix(in srgb, var(--fg) 22%, transparent);
+    --line-strong: color-mix(in srgb, var(--fg) 40%, transparent);
+    color-scheme: dark;
+  }
+  :root[data-theme="light"]{
+    --bg: #FDF1E4;
+    --bg-deep: #F7E3CC;
+    --fg: #241335;
+    --paper: #FFFDF6;
+    --ink: #1D1332;
+    --gold: #C97A00;
+    --coral: #D6236F;
+    --teal: #0E8F82;
+    color-scheme: light;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--bg);
+    color: var(--fg);
+    font-family:'Work Sans', sans-serif;
+    font-weight:300;
+    line-height:1.5;
+    overflow-x:hidden;
+    transition: background-color .35s ease, color .35s ease;
+  }
+  .wrap{ max-width:1140px; margin:0 auto; padding:0 32px; }
+  h1,h2,h3{ font-family:'Fraunces', serif; font-weight:500; letter-spacing:-0.01em; }
+
+  /* ---- topbar ---- */
+  .topbar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:28px 32px;
+    max-width:1140px; margin:0 auto;
+  }
+  .topbar .mark{
+    display:flex; align-items:center; gap:12px;
+    font-family:'Fraunces', serif; font-size:1.6rem; font-weight:600;
+  }
+  .topbar .mark .mark-logo{
+    height:clamp(40px, 9vw, 64px); width:auto; max-width:100%; display:block; flex-shrink:0;
+  }
+  .topbar .mark .mark-text{
+    display:inline;
+    background:linear-gradient(100deg, var(--coral), var(--gold) 45%, var(--teal), var(--coral));
+    background-size:250% 100%;
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    animation:mark-shift 7s ease-in-out infinite;
+  }
+  @keyframes mark-shift{
+    0%, 100%{ background-position:0% 50%; }
+    50%{ background-position:100% 50%; }
+  }
+  .topbar .right{ display:flex; align-items:center; gap:26px; }
+  .topbar nav{ display:flex; gap:28px; }
+  .theme-toggle{
+    display:flex; align-items:center; justify-content:center;
+    width:38px; height:38px; border-radius:50%;
+    border:1px solid var(--line-strong); background:transparent;
+    color:var(--fg); font-size:1.05rem; cursor:pointer; flex-shrink:0;
+    transition:transform .3s ease, background-color .3s ease, border-color .3s ease;
+  }
+  .theme-toggle:hover{ background:color-mix(in srgb, var(--fg) 8%, transparent); transform:rotate(15deg); }
+  .theme-toggle:active{ transform:rotate(15deg) scale(0.92); }
+  .topbar nav a{ color:var(--fg); text-decoration:none; font-size:0.92rem; opacity:0.8; transition:opacity .2s; padding:6px 2px; }
+  .topbar nav a:hover{ opacity:1; }
+
+  /* ---- hero ---- */
+  .hero{ position:relative; padding:64px 32px 96px; max-width:1140px; margin:0 auto; isolation:isolate; }
+  .hero::before{
+    content:''; position:absolute; z-index:-1; pointer-events:none;
+    top:-120px; right:-160px; width:560px; height:560px; border-radius:50%;
+    background:
+      radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--coral) 55%, transparent), transparent 60%),
+      radial-gradient(circle at 70% 70%, color-mix(in srgb, var(--teal) 45%, transparent), transparent 65%);
+    filter:blur(10px); opacity:0.55;
+    animation:blob-drift 14s ease-in-out infinite;
+  }
+  @keyframes blob-drift{
+    0%, 100%{ transform:translate(0,0) scale(1); }
+    50%{ transform:translate(-26px, 22px) scale(1.08); }
+  }
+  .hero .tag{
+    display:inline-block; font-size:0.85rem; color:var(--ink); font-weight:600;
+    background:linear-gradient(100deg, var(--gold), var(--coral));
+    border-radius:999px;
+    padding:7px 16px; margin-bottom:28px;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 6vw, 4.6rem);
+    line-height:1.06;
+    max-width:16ch;
+    color:var(--fg);
+  }
+  .hero h1 em{ font-style:italic; color:var(--gold); font-weight:400; }
+  .hero .sub{
+    margin-top:28px; max-width:46ch; font-size:1.05rem; color:color-mix(in srgb, var(--fg) 75%, transparent);
+  }
+  .hero .row{
+    margin-top:48px; display:flex; align-items:center; gap:24px; flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    background:linear-gradient(100deg, var(--coral), var(--gold));
+    color:var(--ink); font-weight:600;
+    padding:13px 24px; border-radius:4px; text-decoration:none;
+    font-family:'Work Sans', sans-serif; font-size:0.95rem;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn:hover{ transform:translateY(-2px); box-shadow:0 8px 20px color-mix(in srgb, var(--coral) 35%, transparent); }
+  .hero .meta{ font-size:0.88rem; color:color-mix(in srgb, var(--fg) 55%, transparent); }
+
+  /* ---- section heading ---- */
+  .section-head{
+    display:flex; align-items:baseline; justify-content:space-between;
+    margin-bottom:40px; border-top:1px solid var(--line); padding-top:22px;
+  }
+  .section-head h2{ font-size:1.9rem; color:var(--fg); }
+  .section-head .count{ font-size:0.88rem; color:color-mix(in srgb, var(--fg) 50%, transparent); }
+
+  /* ---- work strip ---- */
+  .work{ padding:0 0 60px; }
+  .strip{
+    display:flex; gap:26px; overflow-x:auto; padding:90px 32px 40px;
+    scroll-snap-type:x proximity;
+  }
+  .strip{ scrollbar-width:auto; scrollbar-color:var(--gold) rgba(244,239,224,0.12); }
+  .strip::-webkit-scrollbar{ height:10px; }
+  .strip::-webkit-scrollbar-track{ background:rgba(244,239,224,0.12); border-radius:6px; }
+  .strip::-webkit-scrollbar-thumb{ background:var(--gold); border-radius:6px; border:2px solid var(--bg); }
+  .strip::-webkit-scrollbar-thumb:hover{ background:var(--coral); }
+
+  .card{
+    flex:0 0 280px; scroll-snap-align:start;
+    background:var(--paper); color:var(--ink);
+    border-radius:6px; position:relative; padding-top:26px;
+    box-shadow:8px 8px 0 rgba(0,0,0,0.18);
+    display:block; text-decoration:none;
+    opacity:0; transform:translateY(20px) rotate(0deg);
+    overflow:hidden; transform-origin:50% 100%;
+  }
+  .strip.in .card{
+    animation:card-rise .6s cubic-bezier(.2,.7,.2,1) forwards;
+  }
+  .strip.in .card:nth-child(1){ animation-delay:.05s; }
+  .strip.in .card:nth-child(2){ animation-delay:.16s; }
+  .strip.in .card:nth-child(3){ animation-delay:.27s; }
+  .strip.in .card:nth-child(n+4){ animation-delay:.38s; }
+  @keyframes card-rise{
+    to{ opacity:1; transform:translateY(0) rotate(var(--tilt, 0deg)); }
+  }
+  .card.settled{
+    opacity:1; animation:none;
+    transform:rotate(var(--tilt, 0deg));
+  }
+  .card:nth-child(even){ --tilt:0.6deg; }
+  .card:nth-child(odd){ --tilt:-0.5deg; }
+  .card::before{
+    content:''; position:absolute; top:0; left:0; right:0; height:5px;
+    border-radius:6px 6px 0 0; transition:height .3s cubic-bezier(.2,.7,.2,1);
+    z-index:1;
+  }
+  .card:nth-child(3n+1)::before{ background:var(--coral); }
+  .card:nth-child(3n+2)::before{ background:var(--teal); }
+  .card:nth-child(3n)::before{ background:var(--gold); }
+  .card:hover::before{ height:9px; }
+
+  .hole{
+    position:absolute; top:12px; left:50%; transform:translateX(-50%) scale(1) rotate(0deg);
+    width:16px; height:16px; border-radius:50%;
+    background:var(--bg); border:1px solid rgba(20,33,31,0.25);
+    transition:transform .4s cubic-bezier(.34,1.56,.64,1); z-index:1;
+  }
+  .card:hover .hole{ transform:translateX(-50%) scale(1.25) rotate(200deg); }
+  .card .head{
+    margin:22px 20px 0; padding-bottom:16px; border-bottom:1px solid rgba(20,33,31,0.15);
+    display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
+  }
+  .card .head .num{ font-family:'Fraunces'; font-size:1.7rem; line-height:1; display:inline-block; transition:transform .25s ease; }
+  .card:hover .head .num{ transform:scale(1.12) rotate(-4deg); }
+  .card:nth-child(3n+1) .head .num{ color:var(--coral); }
+  .card:nth-child(3n+2) .head .num{ color:var(--teal); }
+  .card:nth-child(3n) .head .num{ color:var(--gold); }
+  .card .visit{
+    display:flex; align-items:center; justify-content:center;
+    width:30px; height:30px; border-radius:50%; border:1px solid rgba(20,33,31,0.25);
+    color:var(--ink); font-size:0.95rem; flex-shrink:0; transition:background .2s ease, transform .2s ease;
+  }
+  .card:nth-child(3n+1):hover .visit{ background:var(--coral); border-color:var(--coral); transform:rotate(45deg); }
+  .card:nth-child(3n+2):hover .visit{ background:var(--teal); border-color:var(--teal); transform:rotate(45deg); }
+  .card:nth-child(3n):hover .visit{ background:var(--gold); border-color:var(--gold); transform:rotate(45deg); }
+  .card .body{ padding:18px 20px 24px; position:relative; z-index:1; }
+  .card h3{
+    font-size:1.25rem; color:var(--ink); margin-bottom:4px;
+    display:inline-block; position:relative; transition:transform .3s ease;
+  }
+  .card:hover h3{ transform:translateX(3px); }
+  .card h3::after{
+    content:''; position:absolute; left:0; bottom:-2px; height:2px; width:0;
+    transition:width .35s cubic-bezier(.2,.7,.2,1);
+  }
+  .card:nth-child(3n+1) h3::after{ background:var(--coral); }
+  .card:nth-child(3n+2) h3::after{ background:var(--teal); }
+  .card:nth-child(3n) h3::after{ background:var(--gold); }
+  .card:hover h3::after{ width:100%; }
+  .card .yr{
+    font-size:0.82rem; color:rgba(20,33,31,0.55); margin-bottom:10px;
+    transition:transform .3s ease .02s;
+  }
+  .card:hover .yr{ transform:translateX(3px); }
+  .card p{
+    font-size:0.88rem; color:rgba(20,33,31,0.75); margin-bottom:14px;
+    transition:transform .3s ease .04s;
+  }
+  .card:hover p{ transform:translateX(3px); }
+  .card .materials{
+    font-size:0.76rem; color:rgba(20,33,31,0.55); border-top:1px dashed rgba(20,33,31,0.2); padding-top:10px;
+    transition:color .3s ease, padding-left .3s cubic-bezier(.2,.7,.2,1), border-color .3s ease;
+  }
+  .card:hover .materials{ color:var(--ink); padding-left:6px; border-color:rgba(20,33,31,0.4); }
+
+  /* ---- about ---- */
+  .about{ padding:20px 0 100px; }
+  .about-grid{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:64px;
+  }
+  .about-grid p{ font-size:1.05rem; color:color-mix(in srgb, var(--fg) 82%, transparent); margin-bottom:18px; max-width:52ch; }
+  .materials-list{
+    position:relative; overflow:hidden;
+    border:1px solid var(--line); border-radius:6px; padding:28px;
+    background:color-mix(in srgb, var(--fg) 3%, transparent);
+  }
+  .materials-list::before{
+    content:''; position:absolute; top:0; left:0; right:0; height:4px;
+    background:linear-gradient(90deg, var(--coral), var(--gold), var(--teal), var(--coral));
+    background-size:250% 100%;
+    animation:stripe-flow 8s linear infinite;
+  }
+  .materials-list h4{ font-family:'Fraunces'; font-weight:500; font-size:1.05rem; margin-bottom:18px; color:var(--gold); }
+  .materials-list ul{ list-style:none; }
+  .materials-list li{
+    display:flex; justify-content:space-between;
+    padding:10px 0; border-bottom:1px solid var(--line); font-size:0.92rem;
+    color:color-mix(in srgb, var(--fg) 80%, transparent);
+  }
+  .materials-list li:nth-child(1){ border-left:3px solid var(--coral); padding-left:12px; }
+  .materials-list li:nth-child(2){ border-left:3px solid var(--teal); padding-left:12px; }
+  .materials-list li:nth-child(3){ border-left:3px solid var(--gold); padding-left:12px; }
+  .materials-list li:nth-child(4){ border-left:3px solid var(--coral); padding-left:12px; }
+  .materials-list li:nth-child(5){ border-left:3px solid var(--teal); padding-left:12px; }
+  .materials-list li:last-child{ border-bottom:none; }
+  .materials-list li span{ color:color-mix(in srgb, var(--fg) 45%, transparent); font-size:0.85rem; }
+
+  /* ---- contact / footer ---- */
+  .contact{ padding:30px 0 60px; }
+  .stamp{
+    position:relative; overflow:hidden;
+    background:var(--paper); color:var(--ink); border-radius:8px;
+    padding:56px 48px; display:flex; align-items:center; justify-content:space-between;
+    flex-wrap:wrap; gap:28px;
+    transition:background-color .35s ease;
+  }
+  .stamp::before{
+    content:''; position:absolute; top:0; left:0; right:0; height:6px;
+    background:linear-gradient(90deg, var(--coral), var(--gold), var(--teal), var(--coral));
+    background-size:250% 100%;
+    animation:stripe-flow 8s linear infinite;
+  }
+  @keyframes stripe-flow{
+    0%{ background-position:0% 50%; }
+    100%{ background-position:-150% 50%; }
+  }
+  .stamp h2{ font-size:2.1rem; max-width:14ch; }
+  .stamp .right{ display:flex; flex-direction:column; gap:10px; align-items:flex-start; }
+  .stamp a.email{
+    color:var(--ink); font-size:1.1rem; text-decoration:none;
+    background-image:linear-gradient(90deg, var(--coral), var(--gold));
+    background-repeat:no-repeat; background-size:0% 2px; background-position:0 100%;
+    padding-bottom:2px; transition:background-size .3s ease;
+  }
+  .stamp a.email:hover{ background-size:100% 2px; }
+  .stamp .socials{ display:flex; gap:16px; margin-top:6px; }
+  .stamp .socials a{ color:rgba(20,33,31,0.6); text-decoration:none; font-size:0.9rem; padding:6px 2px; }
+
+  footer{ text-align:center; padding:34px 0 50px; font-size:0.82rem; color:color-mix(in srgb, var(--fg) 40%, transparent); }
+  footer .credit{
+    display:inline-block; margin-top:10px; font-size:0.95rem; font-weight:600;
+    color:var(--fg);
+  }
+  footer .credit a{
+    color:var(--coral); text-decoration:none; border-bottom:2px solid var(--coral);
+    padding-bottom:1px; transition:opacity .2s ease;
+  }
+  footer .credit a:hover{ opacity:0.75; }
+
+  .to-top{
+    position:fixed; right:22px; bottom:22px; z-index:40;
+    width:44px; height:44px; border-radius:50%;
+    background:var(--fg); color:var(--bg); border:none;
+    font-size:1.2rem; line-height:1; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+    opacity:0; visibility:hidden; transform:translateY(10px);
+    transition:opacity .25s ease, transform .25s ease, visibility .25s;
+  }
+  .to-top.show{ opacity:1; visibility:visible; transform:translateY(0); }
+  .to-top:hover{ transform:translateY(-3px); }
+  @media (prefers-reduced-motion: reduce){
+    .to-top{ transition:opacity .25s ease, visibility .25s; }
+    .to-top:hover{ transform:none; }
+  }
+
+  @media (max-width:900px){
+    .wrap{ padding:0 24px; }
+    .topbar{ padding:22px 24px; }
+    .hero{ padding:48px 24px 72px; }
+    .about-grid{ gap:40px; }
+  }
+
+  @media (max-width:760px){
+    .about-grid{ grid-template-columns:1fr; gap:36px; }
+    .stamp{ flex-direction:column; align-items:flex-start; padding:40px 28px; }
+    .stamp h2{ font-size:1.7rem; max-width:none; }
+    .topbar nav{ gap:16px; }
+    .topbar nav a{ font-size:0.82rem; }
+    .card{ flex:0 0 240px; }
+    .section-head{ flex-direction:column; align-items:flex-start; gap:6px; }
+  }
+
+  @media (max-width:520px){
+    .wrap{ padding:0 18px; }
+    .topbar{ padding:18px 18px; flex-wrap:wrap; gap:10px; }
+    .topbar .mark{ font-size:1.3rem; gap:8px; }
+    .topbar .mark .mark-logo{ height:38px; }
+    .topbar .right{ gap:16px; }
+    .topbar nav{ gap:14px; }
+    .theme-toggle{ width:34px; height:34px; font-size:0.95rem; }
+    .hero{ padding:36px 18px 56px; }
+    .hero .tag{ font-size:0.78rem; padding:5px 13px; margin-bottom:20px; }
+    .hero h1{ max-width:none; line-height:1.12; }
+    .hero .sub{ font-size:0.98rem; max-width:none; }
+    .hero .row{ flex-direction:column; align-items:flex-start; gap:14px; margin-top:36px; }
+    .btn{ width:100%; justify-content:center; padding:14px 22px; }
+    .section-head h2{ font-size:1.55rem; }
+    .work{ padding:0 0 48px; }
+    .strip{ padding:70px 18px 20px; gap:18px; }
+    .card{ flex:0 0 78vw; }
+    .about{ padding:8px 0 72px; }
+    .about-grid p{ font-size:0.98rem; max-width:none; }
+    .materials-list{ padding:22px; }
+    .stamp h2{ font-size:1.45rem; }
+    .stamp a.email{ font-size:0.95rem; word-break:break-word; }
+    .stamp .socials{ flex-wrap:wrap; row-gap:8px; }
+  }
+
+  @media (max-width:360px){
+    .hero h1{ font-size:2rem; }
+    .card{ flex:0 0 84vw; }
+    .topbar .mark .mark-logo{ height:32px; }
+  }
+
+  @media (hover:none){
+    .btn:hover{ transform:none; }
+    a{ -webkit-tap-highlight-color: rgba(242,169,60,0.25); }
+  }
+
+  /* ---- motion ---- */
+  @keyframes rise{
+    from{ opacity:0; transform:translateY(18px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+  .hero .tag{ animation:rise .6s cubic-bezier(.2,.7,.2,1) both; }
+  .hero h1{ animation:rise .7s cubic-bezier(.2,.7,.2,1) .08s both; }
+  .hero .sub{ animation:rise .7s cubic-bezier(.2,.7,.2,1) .16s both; }
+  .hero .row{ animation:rise .7s cubic-bezier(.2,.7,.2,1) .24s both; }
+
+  .topbar nav a{ position:relative; }
+  .topbar nav a::after{
+    content:''; position:absolute; left:2px; right:2px; bottom:0;
+    height:1px; background:var(--gold);
+    transform:scaleX(0); transform-origin:left; transition:transform .25s ease;
+  }
+  .topbar nav a:hover::after{ transform:scaleX(1); }
+
+  .card{
+    transition:transform .25s ease, box-shadow .25s ease, background-color .35s ease;
+    cursor:pointer;
+  }
+  .card:hover{
+    box-shadow:0 14px 24px -10px rgba(0,0,0,0.28), 10px 10px 0 rgba(0,0,0,0.12);
+    z-index:5;
+    transform:translateY(-6px) rotate(var(--tilt, 0deg));
+  }
+
+  .reveal{ opacity:0; transform:translateY(24px); transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  @media (prefers-reduced-motion: reduce){
+    .hero .tag, .hero h1, .hero .sub, .hero .row{ animation:none; }
+    .card, .card:hover, .strip.in .card:hover{ transition:none; transform:none; box-shadow:8px 8px 0 rgba(0,0,0,0.18); }
+    .reveal{ opacity:1; transform:none; transition:none; }
+    .topbar .mark, .hero::before, .materials-list::before, .stamp::before{ animation:none; }
+    .card{ opacity:1; transform:none; animation:none; }
+    .card::after{ display:none; }
+    .card:hover .hole, .card:hover h3, .card:hover .yr, .card:hover p{ transform:none; }
+  }
+
+  /* ---- light-theme text contrast fixes ----
+     The color-mix() opacity levels below were tuned for light text on a
+     dark background. On a light background the same percentages produce
+     low-contrast gray-on-cream text, so light mode gets its own, higher,
+     opacity values here (extra specificity from [data-theme="light"]
+     means these win over the base rules automatically). */
+  :root[data-theme="light"] .hero .meta{ color:color-mix(in srgb, var(--fg) 70%, transparent); }
+  :root[data-theme="light"] .section-head .count{ color:color-mix(in srgb, var(--fg) 68%, transparent); }
+  :root[data-theme="light"] .materials-list li span{ color:color-mix(in srgb, var(--fg) 68%, transparent); }
+  :root[data-theme="light"] footer{ color:#0A1210; }
+  :root[data-theme="light"] .stamp .socials a{ color:#0A1210; }
+  /* main body copy (hero subtitle, about paragraphs) reads as solid,
+     near-black text in light mode instead of a muted gray */
+  :root[data-theme="light"] .hero .sub,
+  :root[data-theme="light"] .about-grid p{ color:#0A1210; }
+  :root[data-theme="light"]{
+    --line: color-mix(in srgb, var(--fg) 30%, transparent);
+    --line-strong: color-mix(in srgb, var(--fg) 55%, transparent);
+  }
+
+  /* ---- loading screen ---- */
+  #loader{
+    position:fixed; inset:0; z-index:9999;
+    display:flex; align-items:center; justify-content:center;
+    background: var(--bg-deep);
+    transition: opacity .6s ease .1s, visibility .6s ease .1s;
+    overflow:hidden;
+  }
+  #loader::before{
+    content:'';
+    position:absolute; inset:0;
+    background-image: radial-gradient(color-mix(in srgb, var(--fg) 14%, transparent) 1px, transparent 1px);
+    background-size: 26px 26px;
+    opacity:0.5;
+  }
+  #loader.loader-hidden{ opacity:0; visibility:hidden; pointer-events:none; }
+
+  .loader-stage{
+    position:relative;
+    display:flex; flex-direction:column; align-items:center;
+    gap:22px;
+  }
+  .loader-brush{
+    width:220px; height:96px;
+    overflow:visible;
+  }
+  .loader-brush path{
+    fill:none;
+    stroke-width:5.5;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke:url(#brush-gradient);
+    stroke-dasharray:1;
+    stroke-dashoffset:1;
+    animation: brush-draw 1.15s cubic-bezier(.65,0,.35,1) forwards;
+  }
+  @keyframes brush-draw{
+    to{ stroke-dashoffset:0; }
+  }
+  .loader-mark{
+    position:relative;
+    font-family:'Fraunces', serif; font-weight:600; font-size:1.7rem;
+    letter-spacing:-0.01em;
+    color:var(--fg);
+    clip-path: inset(0 100% 0 0);
+    animation: mark-wipe .7s ease-out .95s forwards;
+  }
+  @keyframes mark-wipe{
+    to{ clip-path: inset(0 0 0 0); }
+  }
+  body.loading{ overflow:hidden; }
+
+  @media (prefers-reduced-motion: reduce){
+    .loader-brush path{ animation:none; stroke-dashoffset:0; }
+    .loader-mark{ animation:none; clip-path:inset(0 0 0 0); }
+  }
+</style>
+</head>
+<body class="loading">
+
+  <div id="loader">
+    <div class="loader-stage">
+      <svg class="loader-brush" viewBox="0 0 220 96" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="brush-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="var(--coral)"/>
+            <stop offset="50%" stop-color="var(--gold)"/>
+            <stop offset="100%" stop-color="var(--teal)"/>
+          </linearGradient>
+        </defs>
+        <path d="M12,64 C40,20 66,88 96,40 C118,4 140,72 168,36 C182,18 196,30 208,16" pathLength="1"/>
+      </svg>
+      <div class="loader-mark">Anik Adhikary</div>
+    </div>
+  </div>
+
+  <div class="topbar">
+    <div class="mark">
+      <img src="logo.png" alt="Anik Adhikary" class="mark-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+      <span class="mark-text">Anik Adhikary</span>
+    </div>
+    <div class="right">
+      <nav>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">🌙</button>
+    </div>
+  </div>
+
+  <section class="hero wrap">
+    <div class="tag">Founder, Graphic Design Ocean — Dhaka, Bangladesh</div>
+    <h1>A graphic designer who also writes, speaks, <em>and paints with AI.</em></h1>
+    <p class="sub">I run Graphic Design Ocean and split my time between studio design work, editorial contributions to two Bangladeshi dailies, AI-assisted visual art, and writing — on the page and on stage.</p>
+    <div class="row">
+      <a href="#contact" class="btn">Get in touch</a>
+      <span class="meta">Professional graphic designer &amp; virtual artist</span>
+    </div>
+  </section>
+
+  <section class="work wrap" id="work">
+    <div class="section-head reveal">
+      <h2>Selected work</h2>
+      <span class="count">2022 — 2024</span>
+    </div>
+    <div class="strip reveal">
+
+      <a class="card" href="https://www.facebook.com/profile.php?id=61575087766265" target="_blank" rel="noopener">
+        <div class="hole"></div>
+        <div class="head">
+          <span class="num">01</span>
+          <span class="visit">↗</span>
+        </div>
+        <div class="body">
+          <h3>Graphic Design Ocean</h3>
+          <div class="yr">Founder</div>
+          <p>The design studio I founded, working with small businesses and personal brands on identity, print, and social design.</p>
+          <div class="materials">Branding, print, social design</div>
+        </div>
+      </a>
+
+      <a class="card" href="https://optiqoweb.github.io/optiqoweb/" target="_blank" rel="noopener">
+        <div class="hole"></div>
+        <div class="head">
+          <span class="num">02</span>
+          <span class="visit">↗</span>
+        </div>
+        <div class="body">
+          <h3>Optiqo Web</h3>
+          <div class="yr">Co-Founder &amp; Designer</div>
+          <p>A digital services studio I co-founded, covering web design, graphic design, and brand identity for clients.</p>
+          <div class="materials">Web design, graphic design</div>
+        </div>
+      </a>
+
+      <a class="card" href="https://www.facebook.com/dreadstarfashion" target="_blank" rel="noopener">
+        <div class="hole"></div>
+        <div class="head">
+          <span class="num">03</span>
+          <span class="visit">↗</span>
+        </div>
+        <div class="body">
+          <h3>Dreadstar</h3>
+          <div class="yr">Founder</div>
+          <p>A creative venture I founded and lead, built around an original visual identity and brand direction.</p>
+          <div class="materials">Branding, creative direction</div>
+        </div>
+      </a>
+
+      <a class="card" href="https://dainikanulipi.github.io/da/" target="_blank" rel="noopener">
+        <div class="hole"></div>
+        <div class="head">
+          <span class="num">04</span>
+          <span class="visit">↗</span>
+        </div>
+        <div class="body">
+          <h3>The Daily Anulipi</h3>
+          <div class="yr">Co-Founder, Publisher &amp; Editor</div>
+          <p>A Bengali-language news portal I co-founded, where I oversee publishing and editorial direction.</p>
+          <div class="materials">Publishing, editorial direction</div>
+        </div>
+      </a>
+
+      <a class="card" href="https://dainikabhaynagar.com/" target="_blank" rel="noopener">
+        <div class="hole"></div>
+        <div class="head">
+          <span class="num">05</span>
+          <span class="visit">↗</span>
+        </div>
+        <div class="body">
+          <h3>National Daily Abhaynagar</h3>
+          <div class="yr">Graphic Designer</div>
+          <p>Editorial design and illustration work for one of the regional dailies I contribute to.</p>
+          <div class="materials">Editorial design, illustration</div>
+        </div>
+      </a>
+
+      <a class="card" href="" target="_blank" rel="noopener">
+        <div class="hole"></div>
+        <div class="head">
+          <span class="num">06</span>
+          <span class="visit">↗</span>
+        </div>
+        <div class="body">
+          <h3>Arif Digital Printing Press</h3>
+          <div class="yr">Designer</div>
+          <p>Design work for print production, from layout to prepress, for a local printing press.</p>
+          <div class="materials">Print design, layout</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="about wrap" id="about">
+    <div class="section-head reveal">
+      <h2>About</h2>
+    </div>
+    <div class="about-grid reveal">
+      <div>
+        <p>I founded Graphic Design Ocean to bring consistent, thoughtful design to clients who don't usually get easy access to it — from small businesses to personal brands.</p>
+        <p>Alongside studio work, I contribute design and illustration to two Bangladeshi dailies, National Daily Abhaynagar and The Daily Anulipi, and spend a good part of my week working with AI as a creative tool — as a virtual artist and as a prompt writer.</p>
+        <p>I also write stories, speak on motivation and creative confidence, and keep a running photography habit — most of it unrelated to client work, all of it feeding back into it.</p>
+      </div>
+      <div class="materials-list">
+        <h4>Practice</h4>
+        <ul>
+          <li>Graphic design <span>brand, print, editorial</span></li>
+          <li>AI art &amp; prompting <span>visual generation</span></li>
+          <li>Storytelling <span>short fiction, scripts</span></li>
+          <li>Motivational speaking <span>talks, workshops</span></li>
+          <li>Photography <span>personal practice</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact wrap" id="contact">
+    <div class="stamp reveal">
+      <h2>Have a project in mind?</h2>
+      <div class="right">
+        <a class="email" href="mailto:graphicdesigneranik00@gmail.com">graphicdesigneranik00@gmail.com</a>
+        <div class="socials">
+          <a href="https://wa.me/8801742316691" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://instagram.com/anik_adhikary_joy" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://linkedin.com/in/anik-adhikary-572779408" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>Graphic Design Ocean, Dhaka — sample site, ready for real project images<br><span class="credit">Made by <a href="https://mdfarhanshahriar.github.io/mdfarhanshahriar.07/" target="_blank" rel="noopener">MD. Farhan Shahriar</a></span></footer>
+
+  <button id="toTop" class="to-top" type="button" aria-label="Return to top">↑</button>
+
+  <script>
+    (function(){
+      var root = document.documentElement;
+      var btn = document.getElementById('themeToggle');
+      function currentTheme(){ return root.getAttribute('data-theme') === 'light' ? 'light' : 'dark'; }
+      function paintIcon(t){ if(btn) btn.textContent = t === 'light' ? '☀️' : '🌙'; }
+      paintIcon(currentTheme());
+      if(btn){
+        btn.addEventListener('click', function(){
+          var next = currentTheme() === 'light' ? 'dark' : 'light';
+          root.setAttribute('data-theme', next);
+          try{ localStorage.setItem('theme', next); }catch(e){}
+          paintIcon(next);
+        });
+      }
+    })();
+
+    (function(){
+      var cards = document.querySelectorAll('.work .card');
+      cards.forEach(function(card){
+        card.addEventListener('animationend', function(){
+          card.classList.add('settled');
+        });
+      });
+    })();
+
+    var revealEls = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            entry.target.classList.add('in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold:0.15, rootMargin:'0px 0px -40px 0px' });
+      revealEls.forEach(function(el){ io.observe(el); });
+    } else {
+      revealEls.forEach(function(el){ el.classList.add('in'); });
+    }
+
+    (function(){
+      var btn = document.getElementById('toTop');
+      function toggle(){
+        if(window.scrollY > 500){ btn.classList.add('show'); }
+        else{ btn.classList.remove('show'); }
+      }
+      toggle();
+      window.addEventListener('scroll', toggle, { passive:true });
+      btn.addEventListener('click', function(){
+        var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top:0, behavior: reduced ? 'auto' : 'smooth' });
+      });
+    })();
+
+    (function(){
+      var loader = document.getElementById('loader');
+      var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var minTime = reduced ? 300 : 1700;
+      var start = Date.now();
+      function hide(){
+        var elapsed = Date.now() - start;
+        var wait = Math.max(0, minTime - elapsed);
+        setTimeout(function(){
+          loader.classList.add('loader-hidden');
+          document.body.classList.remove('loading');
+          setTimeout(function(){ loader.remove(); }, 550);
+        }, wait);
+      }
+      if(document.readyState === 'complete'){ hide(); }
+      else{ window.addEventListener('load', hide); }
+    })();
+  </script>
+
+</body>
+</html>
