@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <title>Anik Adhikary — Graphic Designer &amp; Virtual Artist</title>
 <meta name="description" content="Anik Adhikary is a graphic designer and virtual artist based in Dhaka, Bangladesh. Founder of Graphic Design Ocean, working across branding, editorial design, AI-assisted art, and public speaking.">
 <meta name="keywords" content="Anik Adhikary, graphic designer Dhaka, Graphic Design Ocean, Bangladeshi graphic designer, brand identity design, editorial illustration, AI art, virtual artist">
@@ -138,6 +138,10 @@
     50%{ background-position:100% 50%; }
   }
   .topbar .right{ display:flex; align-items:center; gap:clamp(14px, 3vw, 26px); }
+
+  @media (max-width:600px){
+    .topbar .right{ width:100%; justify-content:space-between; }
+  }
   .topbar nav{ display:flex; gap:clamp(14px, 3vw, 28px); }
   /* 44px is the accepted minimum comfortable touch target (Apple HIG /
      WCAG 2.5.5); keep that floor on every screen, not just desktop. */
