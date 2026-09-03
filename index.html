@@ -99,18 +99,29 @@
     overflow-x:hidden;
     transition: background-color .35s ease, color .35s ease;
   }
-  .wrap{ max-width:1140px; margin:0 auto; padding:0 32px; }
+  /* Fluid side padding: scales smoothly between phone and desktop instead
+     of jumping at breakpoints, and adds the device's safe-area inset on
+     notched/rounded-corner phones (iPhone in landscape, punch-hole
+     Android) so content never sits under a cutout or home-indicator. */
+  .wrap{
+    max-width:1140px; margin:0 auto;
+    padding-left:calc(clamp(18px, 4vw, 32px) + env(safe-area-inset-left));
+    padding-right:calc(clamp(18px, 4vw, 32px) + env(safe-area-inset-right));
+  }
   h1,h2,h3{ font-family:'Fraunces', serif; font-weight:500; letter-spacing:-0.01em; }
 
   /* ---- topbar ---- */
   .topbar{
     display:flex; align-items:center; justify-content:space-between;
-    padding:28px 32px;
+    flex-wrap:wrap; gap:10px 16px;
+    padding:clamp(18px, 3.5vw, 28px) clamp(18px, 4vw, 32px);
+    padding-left:calc(clamp(18px, 4vw, 32px) + env(safe-area-inset-left));
+    padding-right:calc(clamp(18px, 4vw, 32px) + env(safe-area-inset-right));
     max-width:1140px; margin:0 auto;
   }
   .topbar .mark{
     display:flex; align-items:center; gap:12px;
-    font-family:'Fraunces', serif; font-size:1.6rem; font-weight:600;
+    font-family:'Fraunces', serif; font-size:clamp(1.15rem, 4.5vw, 1.6rem); font-weight:600;
   }
   .topbar .mark .mark-logo{
     height:clamp(40px, 9vw, 64px); width:auto; max-width:100%; display:block; flex-shrink:0;
@@ -126,22 +137,32 @@
     0%, 100%{ background-position:0% 50%; }
     50%{ background-position:100% 50%; }
   }
-  .topbar .right{ display:flex; align-items:center; gap:26px; }
-  .topbar nav{ display:flex; gap:28px; }
+  .topbar .right{ display:flex; align-items:center; gap:clamp(14px, 3vw, 26px); }
+  .topbar nav{ display:flex; gap:clamp(14px, 3vw, 28px); }
+  /* 44px is the accepted minimum comfortable touch target (Apple HIG /
+     WCAG 2.5.5); keep that floor on every screen, not just desktop. */
   .theme-toggle{
     display:flex; align-items:center; justify-content:center;
-    width:38px; height:38px; border-radius:50%;
+    width:44px; height:44px; border-radius:50%;
     border:1px solid var(--line-strong); background:transparent;
     color:var(--fg); font-size:1.05rem; cursor:pointer; flex-shrink:0;
     transition:transform .3s ease, background-color .3s ease, border-color .3s ease;
   }
   .theme-toggle:hover{ background:color-mix(in srgb, var(--fg) 8%, transparent); transform:rotate(15deg); }
   .theme-toggle:active{ transform:rotate(15deg) scale(0.92); }
-  .topbar nav a{ color:var(--fg); text-decoration:none; font-size:0.92rem; opacity:0.8; transition:opacity .2s; padding:6px 2px; }
+  .topbar nav a{
+    color:var(--fg); text-decoration:none; font-size:0.92rem; opacity:0.8;
+    transition:opacity .2s; padding:12px 2px; display:inline-flex; align-items:center;
+  }
   .topbar nav a:hover{ opacity:1; }
 
   /* ---- hero ---- */
-  .hero{ position:relative; padding:64px 32px 96px; max-width:1140px; margin:0 auto; isolation:isolate; }
+  .hero{
+    position:relative; max-width:1140px; margin:0 auto; isolation:isolate;
+    padding-top:clamp(36px, 6vw, 64px); padding-bottom:clamp(56px, 9vw, 96px);
+    padding-left:calc(clamp(18px, 4vw, 32px) + env(safe-area-inset-left));
+    padding-right:calc(clamp(18px, 4vw, 32px) + env(safe-area-inset-right));
+  }
   .hero::before{
     content:''; position:absolute; z-index:-1; pointer-events:none;
     top:-120px; right:-160px; width:560px; height:560px; border-radius:50%;
@@ -156,10 +177,10 @@
     50%{ transform:translate(-26px, 22px) scale(1.08); }
   }
   .hero .tag{
-    display:inline-block; font-size:0.85rem; color:var(--ink); font-weight:600;
+    display:inline-block; font-size:clamp(0.78rem, 2vw, 0.85rem); color:var(--ink); font-weight:600;
     background:linear-gradient(100deg, var(--gold), var(--coral));
     border-radius:999px;
-    padding:7px 16px; margin-bottom:28px;
+    padding:7px 16px; margin-bottom:clamp(20px, 3vw, 28px);
   }
   .hero h1{
     font-size:clamp(2.4rem, 6vw, 4.6rem);
@@ -169,10 +190,10 @@
   }
   .hero h1 em{ font-style:italic; color:var(--gold); font-weight:400; }
   .hero .sub{
-    margin-top:28px; max-width:46ch; font-size:1.05rem; color:color-mix(in srgb, var(--fg) 75%, transparent);
+    margin-top:28px; max-width:46ch; font-size:clamp(0.98rem, 2vw, 1.05rem); color:color-mix(in srgb, var(--fg) 75%, transparent);
   }
   .hero .row{
-    margin-top:48px; display:flex; align-items:center; gap:24px; flex-wrap:wrap;
+    margin-top:clamp(36px, 5vw, 48px); display:flex; align-items:center; gap:24px; flex-wrap:wrap;
   }
   .btn{
     display:inline-flex; align-items:center; gap:10px;
@@ -188,15 +209,19 @@
   /* ---- section heading ---- */
   .section-head{
     display:flex; align-items:baseline; justify-content:space-between;
-    margin-bottom:40px; border-top:1px solid var(--line); padding-top:22px;
+    flex-wrap:wrap; gap:6px 16px;
+    margin-bottom:clamp(28px, 5vw, 40px); border-top:1px solid var(--line); padding-top:22px;
   }
-  .section-head h2{ font-size:1.9rem; color:var(--fg); }
+  .section-head h2{ font-size:clamp(1.5rem, 4vw, 1.9rem); color:var(--fg); }
   .section-head .count{ font-size:0.88rem; color:color-mix(in srgb, var(--fg) 50%, transparent); }
 
   /* ---- work strip ---- */
-  .work{ padding:0 0 60px; }
+  .work{ padding:0 0 clamp(40px, 6vw, 60px); }
   .strip{
-    display:flex; gap:26px; overflow-x:auto; padding:90px 32px 40px;
+    display:flex; gap:clamp(16px, 2.5vw, 26px); overflow-x:auto;
+    padding-top:clamp(56px, 8vw, 90px); padding-bottom:clamp(20px, 4vw, 40px);
+    padding-left:calc(clamp(18px, 4vw, 32px) + env(safe-area-inset-left));
+    padding-right:calc(clamp(18px, 4vw, 32px) + env(safe-area-inset-right));
     scroll-snap-type:x proximity;
   }
   .strip{ scrollbar-width:auto; scrollbar-color:var(--gold) rgba(244,239,224,0.12); }
@@ -295,11 +320,11 @@
   .card:hover .materials{ padding-left:6px; border-color:rgba(20,33,31,0.4); }
 
   /* ---- about ---- */
-  .about{ padding:20px 0 100px; }
+  .about{ padding:20px 0 clamp(64px, 10vw, 100px); }
   .about-grid{
-    display:grid; grid-template-columns:1.1fr 0.9fr; gap:64px;
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:clamp(32px, 6vw, 64px);
   }
-  .about-grid p{ font-size:1.05rem; color:color-mix(in srgb, var(--fg) 82%, transparent); margin-bottom:18px; max-width:52ch; }
+  .about-grid p{ font-size:clamp(0.98rem, 1.6vw, 1.05rem); color:color-mix(in srgb, var(--fg) 82%, transparent); margin-bottom:18px; max-width:52ch; }
   .materials-list{
     position:relative; overflow:hidden;
     border:1px solid var(--line); border-radius:6px; padding:28px;
@@ -327,11 +352,12 @@
   .materials-list li span{ color:color-mix(in srgb, var(--fg) 45%, transparent); font-size:0.85rem; }
 
   /* ---- contact / footer ---- */
-  .contact{ padding:30px 0 60px; }
+  .contact{ padding:30px 0 clamp(40px, 6vw, 60px); }
   .stamp{
     position:relative; overflow:hidden;
     background:var(--paper); color:var(--ink); border-radius:8px;
-    padding:56px 48px; display:flex; align-items:center; justify-content:space-between;
+    padding:clamp(32px, 6vw, 56px) clamp(24px, 6vw, 48px);
+    display:flex; align-items:center; justify-content:space-between;
     flex-wrap:wrap; gap:28px;
     transition:background-color .35s ease;
   }
@@ -345,17 +371,18 @@
     0%{ background-position:0% 50%; }
     100%{ background-position:-150% 50%; }
   }
-  .stamp h2{ font-size:2.1rem; max-width:14ch; }
-  .stamp .right{ display:flex; flex-direction:column; gap:10px; align-items:flex-start; }
+  .stamp h2{ font-size:clamp(1.45rem, 4.5vw, 2.1rem); max-width:14ch; }
+  .stamp .right{ display:flex; flex-direction:column; gap:10px; align-items:flex-start; min-width:0; }
   .stamp a.email{
-    color:var(--ink); font-size:1.1rem; text-decoration:none;
+    color:var(--ink); font-size:clamp(0.95rem, 2.2vw, 1.1rem); text-decoration:none;
     background-image:linear-gradient(90deg, var(--coral), var(--gold));
     background-repeat:no-repeat; background-size:0% 2px; background-position:0 100%;
     padding-bottom:2px; transition:background-size .3s ease;
+    overflow-wrap:break-word; max-width:100%;
   }
   .stamp a.email:hover{ background-size:100% 2px; }
-  .stamp .socials{ display:flex; gap:16px; margin-top:6px; }
-  .stamp .socials a{ color:rgba(20,33,31,0.6); text-decoration:none; font-size:0.9rem; padding:6px 2px; }
+  .stamp .socials{ display:flex; flex-wrap:wrap; gap:16px; row-gap:8px; margin-top:6px; }
+  .stamp .socials a{ color:rgba(20,33,31,0.6); text-decoration:none; font-size:0.9rem; padding:8px 2px; }
 
   footer{ text-align:center; padding:34px 0 50px; font-size:0.82rem; color:color-mix(in srgb, var(--fg) 40%, transparent); }
   footer .credit{
@@ -369,7 +396,9 @@
   footer .credit a:hover{ opacity:0.75; }
 
   .to-top{
-    position:fixed; right:22px; bottom:22px; z-index:40;
+    position:fixed; z-index:40;
+    right:calc(22px + env(safe-area-inset-right));
+    bottom:calc(22px + env(safe-area-inset-bottom));
     width:44px; height:44px; border-radius:50%;
     background:var(--fg); color:var(--bg); border:none;
     font-size:1.2rem; line-height:1; cursor:pointer;
@@ -385,58 +414,52 @@
     .to-top:hover{ transform:none; }
   }
 
+  /* ---- responsive breakpoints ----
+     Font sizes, paddings, and gaps above already flex fluidly via
+     clamp()/vw, so everything below is *structural* only — the things
+     clamp can't do: switching a grid to one column, changing flex-
+     direction, resizing the horizontal card strip, and giving small
+     touch screens a bit more breathing room. Three tiers: tablet
+     (≤900px), phone (≤760px), and small phone (≤480px), plus a floor
+     for the smallest phones still sold (≤360px, e.g. iPhone SE/mini). */
+
   @media (max-width:900px){
-    .wrap{ padding:0 24px; }
-    .topbar{ padding:22px 24px; }
-    .hero{ padding:48px 24px 72px; }
-    .about-grid{ gap:40px; }
+    .about-grid{ grid-template-columns:1fr; }
   }
 
   @media (max-width:760px){
-    .about-grid{ grid-template-columns:1fr; gap:36px; }
-    .stamp{ flex-direction:column; align-items:flex-start; padding:40px 28px; }
-    .stamp h2{ font-size:1.7rem; max-width:none; }
-    .topbar nav{ gap:16px; }
-    .topbar nav a{ font-size:0.82rem; }
-    .card{ flex:0 0 240px; }
-    .section-head{ flex-direction:column; align-items:flex-start; gap:6px; }
+    .stamp{ flex-direction:column; align-items:flex-start; }
+    .card{ flex:0 0 clamp(220px, 42vw, 260px); }
+    .section-head{ flex-direction:column; align-items:flex-start; }
   }
 
-  @media (max-width:520px){
-    .wrap{ padding:0 18px; }
-    .topbar{ padding:18px 18px; flex-wrap:wrap; gap:10px; }
-    .topbar .mark{ font-size:1.3rem; gap:8px; }
-    .topbar .mark .mark-logo{ height:38px; }
-    .topbar .right{ gap:16px; }
-    .topbar nav{ gap:14px; }
-    .theme-toggle{ width:34px; height:34px; font-size:0.95rem; }
-    .hero{ padding:36px 18px 56px; }
-    .hero .tag{ font-size:0.78rem; padding:5px 13px; margin-bottom:20px; }
+  @media (max-width:480px){
+    .topbar .mark .mark-logo{ height:36px; }
     .hero h1{ max-width:none; line-height:1.12; }
-    .hero .sub{ font-size:0.98rem; max-width:none; }
-    .hero .row{ flex-direction:column; align-items:flex-start; gap:14px; margin-top:36px; }
+    .hero .sub{ max-width:none; }
+    .hero .row{ flex-direction:column; align-items:stretch; gap:14px; }
     .btn{ width:100%; justify-content:center; padding:14px 22px; }
-    .section-head h2{ font-size:1.55rem; }
-    .work{ padding:0 0 48px; }
-    .strip{ padding:70px 18px 20px; gap:18px; }
     .card{ flex:0 0 78vw; }
-    .about{ padding:8px 0 72px; }
-    .about-grid p{ font-size:0.98rem; max-width:none; }
+    .about-grid p{ max-width:none; }
     .materials-list{ padding:22px; }
-    .stamp h2{ font-size:1.45rem; }
-    .stamp a.email{ font-size:0.95rem; word-break:break-word; }
-    .stamp .socials{ flex-wrap:wrap; row-gap:8px; }
+    .materials-list li{ flex-wrap:wrap; row-gap:2px; }
+    .stamp h2{ max-width:none; }
   }
 
   @media (max-width:360px){
-    .hero h1{ font-size:2rem; }
+    .hero h1{ font-size:1.9rem; }
     .card{ flex:0 0 84vw; }
-    .topbar .mark .mark-logo{ height:32px; }
+    .topbar .mark .mark-logo{ height:30px; }
   }
 
   @media (hover:none){
     .btn:hover{ transform:none; }
     a{ -webkit-tap-highlight-color: rgba(242,169,60,0.25); }
+    /* Touch users swipe the card strip directly; a persistent scrollbar
+       just floats awkwardly below the cards with no context, so hide it
+       and rely on the cut-off card edge as the scroll affordance. */
+    .strip{ scrollbar-width:none; }
+    .strip::-webkit-scrollbar{ display:none; }
   }
 
   /* ---- motion ---- */
@@ -722,7 +745,7 @@
     <div class="stamp reveal">
       <h2>Have a project in mind?</h2>
       <div class="right">
-        <a class="email" href="mailto:graphicdesigneranik00@gmail.com">graphicdesigneranik00@gmail.com</a>
+        <a class="email" href="mailto:graphicdesigneranik00@gmail.com">graphicdesigneranik00@<wbr>gmail.com</a>
         <div class="socials">
           <a href="https://wa.me/8801742316691" target="_blank" rel="noopener">WhatsApp</a>
           <a href="https://instagram.com/anik_adhikary_joy" target="_blank" rel="noopener">Instagram</a>
